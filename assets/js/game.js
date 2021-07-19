@@ -7,12 +7,13 @@ var playerMoney = 10;
 
 console.log(playerName, playerAttack, playerHealth);
 
-var enemyName = "Roberto";
+var enemyNames = ["Roborto", "Amy Android", "Robo Trumble"];
 var enemyHealth = 50;
 var enemyAttack = 12;
 
-var fight = function() {
- // Alert players that they are starting the round
+
+var fight = function(enemyName) {
+ // Alert players that they are starting the roundmilo
   window.alert("Welcome to Robot Gladiators!");
 
   // Prompt players if they would like to play
@@ -33,8 +34,7 @@ var fight = function() {
   playerHealth = playerHealth - enemyAttack;
 
   // Log a resulting message to the console so we know that it worked.
-  console.log(
-    enemyName + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining."
+  console.log(enemyName + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining."
 );
 
 // check enemy's health
@@ -69,5 +69,9 @@ else if (promptFight === "skip" || promptFight === "SKIP") {
     fight();
   }
 }
+
 }
- fight();
+
+for(var i = 0; i < enemyNames.length; i++) {
+  fight(enemyNames[i]);
+}
